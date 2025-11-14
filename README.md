@@ -1,198 +1,198 @@
-# 🎓 Smart Study Assistant
+🎓 Smart Study Assistant
 
-An AI-powered learning platform that generates study summaries, quiz questions, study tips, and math problems for any topic.
+AI-Powered Learning Companion — Summary • Quizzes • Math Mode
 
-## ✨ Features
+Smart Study Assistant is a full-stack AI-powered web application that helps students learn faster and smarter.
+Enter any topic, and the app will:
 
-- 📚 **AI Summaries** - 3-point summaries of any topic
-- 🧠 **Interactive Quizzes** - 3 MCQs per topic
-- 💡 **Study Tips** - AI-generated learning strategies
-- 🔢 **Math Mode** - Quantitative problems with explanations
-- 📱 **Responsive Design** - Works on desktop, tablet, mobile
-- ⚡ **Modern UI** - Beautiful gradient design with animations
-- 💾 **History** - Saves last 5 searches locally
+Fetch real information from Wikipedia
 
-## 🛠️ Tech Stack
+Generate 3-bullet summaries
 
-**Backend:** Node.js + Express + Groq API + Wikipedia API  
-**Frontend:** React 19 + Vite + Axios + CSS3
+Create 3 AI-generated MCQs
 
-## 🚀 Quick Start
+Provide a helpful study tip
 
-### Prerequisites
+(Optional) Generate a Math/Logic question with full explanation
 
-- Node.js v16 or higher
-- npm or yarn
-- API key for one of: Groq (recommended), Google Gemini, or OpenAI
+Built with React + Vite (frontend) and Node.js + Express (backend), powered by Groq AI, and deployed on Vercel + Render.
 
-### 1. Clone Repository
+🚀 Live Demo
 
-```bash
-git clone <repository-url>
-cd smartStudy
-```
+🔗 Frontend: https://smart-study-zeta-azure.vercel.app/
 
-### 2. Backend Setup
+🔗 Backend: https://smart-study-v0pa.onrender.com
 
-```bash
-cd backend
-npm install
-```
+✨ Features
+🔍 Topic Search
 
-Create `.env` file:
+Fetches real-time topic details using Wikipedia’s public API.
 
-```env
-GROQ_API_KEY=your_api_key_here
-PORT=5000
-```
+🤖 AI-Powered Learning
 
-**Get API Keys:**
+Uses Groq AI to generate:
 
-## 🚀 Quick Start
+3-point concise summary
 
-### 1. Backend Setup
+3 MCQ quiz questions
 
-```bash
-cd backend
-npm install
-```
+1 study tip
 
-Create `backend/.env`:
+➗ Math Mode
 
-```env
-GROQ_API_KEY=your_key_here
-PORT=5000
-```
+When enabled, the app produces:
 
-Get free key: https://console.groq.com
+A logic/quantitative question
 
-Start:
+Correct answer
 
-```bash
-npm start
-```
+Full explanation
 
-### 2. Frontend Setup (new terminal)
+🎨 Modern UI
 
-```bash
-cd frontend
-npm install
-```
+Fully responsive
 
-Create `frontend/.env.local`:
+Clean animations
 
-```env
-VITE_API_URL=http://localhost:5000
-```
+History tracking
 
-Start:
+Smooth loading state
 
-```bash
-npm run dev
-```
+Improved UX via Claude-assisted design refinements
 
-### 3. Open Browser
+☁️ Fully Deployed
 
-Go to: **http://localhost:5173**
+Frontend → Vercel
 
-## 📖 How to Use
+Backend → Render
 
-1. Enter a topic (e.g., "gravity", "photosynthesis")
-2. Click "Search"
-3. See AI-generated results:
-   - Summary (3 bullets)
-   - Quiz (3 questions)
-   - Study tip
-4. Check "Math mode" for quantitative problems
+🛠️ Tech Stack
+Frontend
 
-## 📡 API Endpoint
+React
 
-```
-GET /study?topic=gravity&mode=normal
-GET /study?topic=quadratic equations&mode=math
-```
+Vite
 
-Response format:
+Custom CSS
 
-```json
+Fetch API
+
+Environment variables (import.meta.env)
+
+Backend
+
+Node.js
+
+Express
+
+Groq API (LLM)
+
+Wikipedia summary API
+
+CORS enabled
+
+Deployment
+
+Vercel (frontend)
+
+Render (backend)
+
+📡 API Details
+Endpoint: /study
+
+Method: GET
+Example:
+
+/study?topic=gravity&mode=normal
+/study?topic=algebra&mode=math
+
+Query Parameters
+Parameter	Required	Description
+topic	✔	Topic to study
+mode	✖	math = enable Math Mode
+Sample JSON Response
 {
-  "topic": "gravity",
-  "summary": ["point 1", "point 2", "point 3"],
+  "summary": ["Point 1", "Point 2", "Point 3"],
   "quiz": [
-    {
-      "question": "...",
-      "options": ["A", "B", "C", "D"],
-      "answer": "A"
-    }
+    { "question": "Q1?", "options": ["A","B","C","D"], "answer": "A" },
+    { "question": "Q2?", "options": ["A","B","C","D"], "answer": "B" },
+    { "question": "Q3?", "options": ["A","B","C","D"], "answer": "C" }
   ],
-  "studyTip": "...",
-  "mathProblem": null
+  "studyTip": "A helpful study tip.",
+  "mathQuestion": {
+    "question": "A math/logic question.",
+    "answer": "Correct answer",
+    "explanation": "Detailed explanation"
+  }
 }
-```
 
-## 📝 Project Structure
+🧑‍💻 Local Development
+1️⃣ Clone the repository
+git clone https://github.com/Adarsh765-jpg/Smart-Study.git
 
-```
-smartStudy/
-├── backend/
-│   ├── server.js
-│   ├── package.json
-│   ├── .env (create this)
-│   └── services/
-│       ├── aiService.js
-│       └── wikiService.js
-└── frontend/
-    ├── package.json
-    ├── vite.config.js
-    ├── index.html
-    ├── .env.local (create this)
-    └── src/
-        ├── App.jsx
-        ├── main.jsx
-        ├── pages/Home.jsx
-        ├── components/
-        ├── api/studyApi.js
-        └── styles/
-```
+2️⃣ Backend Setup
+cd backend
+npm install
+npm start
 
-## 🔧 Troubleshooting
 
-**Backend not responding?**
+Set environment variables:
 
-- Check if backend is running: `npm start`
-- Verify GROQ_API_KEY is set in `.env`
+GROQ_API_KEY=your_groq_key_here
 
-**Frontend can't find backend?**
 
-- Verify VITE_API_URL in `frontend/.env.local`
-- Check if backend is running on port 5000
+Server runs on:
 
-**Only getting 1 question instead of 3?**
+http://localhost:5000
 
-- Restart backend with latest code
-- Clear browser cache and reload
+3️⃣ Frontend Setup
+cd ../frontend
+npm install
+npm run dev
 
-## 🚀 Deployment
 
-### Frontend (Vercel/Netlify)
+Set .env:
 
-```bash
-npm run build
-# Deploy dist/ folder
-```
+VITE_API_URL=http://localhost:5000
 
-### Backend (Render/Railway)
 
-1. Push to GitHub
-2. Connect repository
-3. Set GROQ_API_KEY environment variable
-4. Deploy
+Frontend runs on:
 
-## 🤖 AI Models
+http://localhost:5173
 
-- **Groq** (llama-3.3-70b-versatile) - Fast, free
-- **Wikipedia API** - Public data source
+🎥 Demo Video
 
----
+📺 Coming Soon (Add your link here)
 
-**Ready to learn? Start the servers and go! 🎓**
+🧠 AI Tools Used
+
+Groq API → Fast, efficient LLM responses
+
+Claude → UI/UX improvements, animations, styling refinements
+
+ChatGPT → Logic, debugging, deployment guidance
+
+Wikipedia API → Topic data source
+
+🙌 Acknowledgments
+
+Built using:
+
+React + Vite
+
+Node.js + Express
+
+Groq AI
+
+Render (Backend Hosting)
+
+Vercel (Frontend Hosting)
+
+⭐ Want to Contribute?
+
+Pull requests are welcome!
+Feel free to open issues for bugs, enhancements, or suggestions.
+
+🎓 Start learning smarter today!
+
+🚀 Live App: https://smart-study-zeta-azure.vercel.app/
